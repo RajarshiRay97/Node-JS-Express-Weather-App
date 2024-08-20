@@ -111,6 +111,5 @@ app.get('*',(req, res)=>{
 // to start/listen a web server in a particular port
 app.listen(port, ()=>{
     console.log('Server is up and running on port '+ port);
-    console.log('To access the server endpoints go to the below base url -');
     console.log(`http://localhost:${port}/`);
 });
