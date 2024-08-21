@@ -7,7 +7,9 @@ const hbs = require('hbs');
 
 const app = express();
 
-const port = 3000;      // Development port (Note- HTTP default port is 80)
+// process.env.PORT will extract the PORT (provided by the host srver- here rnder) from environment variables in the system
+// 3000 is Development port (Note- HTTP default port is 80)
+const port = process.env.PORT || 3000;
 
 // Path defination to configure Express App
 const publicDirectoryPath = path.join(__dirname,'../public/');
@@ -111,5 +113,4 @@ app.get('*',(req, res)=>{
 // to start/listen a web server in a particular port
 app.listen(port, ()=>{
     console.log('Server is up and running on port '+ port);
-    console.log(`http://localhost:${port}/`);
 });
